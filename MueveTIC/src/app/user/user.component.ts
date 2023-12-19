@@ -15,6 +15,11 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent {
+  customData: any;
+  showVehiculosComponent = false;
+  showReservaActivaComponent = false;
+  showHistorialComponent = false;
+  showPerfilComponent = false;
   matricula: string | undefined ;
   modelo: string | undefined;
   estado: string | undefined;
@@ -63,6 +68,31 @@ export class UserComponent {
     this.updateLists();
     this.menu='home';
   }
+  showVehiculos() {
+    this.showHistorialComponent = false;
+    this.showPerfilComponent = false;
+    this.showReservaActivaComponent = false;
+    this.showVehiculosComponent = true;
+  }
+  showHistorial() {
+    this.showVehiculosComponent = false;
+    this.showPerfilComponent = false;
+    this.showReservaActivaComponent = false;
+    this.showHistorialComponent = true;
+  }
+  showReservaActiva(){
+    this.showVehiculosComponent = false;
+    this.showHistorialComponent = false;
+    this.showPerfilComponent = false;
+    this.showReservaActivaComponent = true;
+  }
+  showPerfil(){
+    this.showVehiculosComponent = false;
+    this.showReservaActivaComponent = false;
+    this.showHistorialComponent = false;
+    this.showPerfilComponent = true;
+  }
+
   maxCharacters: number = 50;
   tooltipText: string = '';
   updateTooltip(): void {
