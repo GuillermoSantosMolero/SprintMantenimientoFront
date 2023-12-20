@@ -1,0 +1,62 @@
+<!-- OPCION MENU PERFIL -->
+<div class="app-container">
+
+    <div class="horizontal-line">
+      <div class="short-divider"></div>
+      <span class="line-text">Perfil</span>
+      <div class="long-divider-Perfil"></div>
+    </div>
+    <div class="form-container-Perfil">
+      <div class="form-left-Perfil">
+        <label for="Nombre">Nombre</label>
+        <input class="input-formularios" type="text" id="Nombre" name="Nombre" [(ngModel)]="nombre">
+        <label for="apellidos">Apellidos</label>
+        <input class="input-formularios" type="text" id="Apellidos" name="Apellidos" [(ngModel)]="apellidos">
+        <label for="correo">Correo Electrónico</label>
+        <input class="input-formularios" type="text" id="correo" name="correo" [(ngModel)]="correo" readonly>
+        <label for="fechaNacimiento">Fecha de Nacimiento</label>
+        <div class=container-fecha>
+          <select class="input-fecha" [(ngModel)]="selectedDay" [ngModelOptions]="{ standalone: true }" required>
+            <option *ngFor="let day of days" [value]="day">{{ day }}</option>
+          </select>
+          <select class="input-fecha" [(ngModel)]="selectedMonth" [ngModelOptions]="{ standalone: true }" required>
+            <option *ngFor="let month of months" [value]="month">{{ month }}</option>
+          </select>
+          <select class="input-fecha" [(ngModel)]="selectedYear" [ngModelOptions]="{ standalone: true }" required>
+            <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+          </select>
+        </div>
+      </div>
+  
+      <div class="form-separator-Perfil"></div>
+      <div class="form-center-Perfil">
+        <label for="DNI">DNI</label>
+        <input class="input-formularios" type="text" id="DNI" name="DNI" [(ngModel)]="dni">
+  
+        <label for="movil">Móvil</label>
+        <input class="input-formularios" type="text" id="movil" name="movil" [(ngModel)]="movil">
+  
+        <label for="contrasena">Contraseña</label>
+        <input class="input-formularios" type="password" id="contrasena" name="contrasena" disabled="" [(ngModel)]="contrasenaLeida">
+  
+        <label for="carnet">Carnet</label>
+        <select class="input-formularios" [(ngModel)]="carne" [ngModelOptions]="{standalone: true}" required>
+          <option value="B">B</option>
+          <option value="A1">A1</option>
+          <option value="A2">A2</option>
+        </select>
+      </div>
+  
+      <div class="form-right-Perfil">
+        <img src="assets\iconoRol.png" alt="Imagen">
+      </div>
+  
+      <div class="form-button absolute">
+        <button class="button-volver" (click)="back()"><img src="assets/volver_boton.png" alt="Volver"></button>
+        <button class="button-save" (click)="updatePerfil()"> <img src="assets/guardar_boton.png" alt="guardar"></button>
+        <button class="button-cancelar" (click)="deleteAccount()"> <img src="assets/eliminar_cuenta_boton.png"
+            alt="eliminar"></button>
+      </div>
+    </div>
+  
+  </div>

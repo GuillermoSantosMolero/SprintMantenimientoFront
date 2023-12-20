@@ -21,7 +21,7 @@
 
   nav{
     display: flex;
-    width: 100%;
+    /* width: 100%; */
     margin: auto;
     padding: 0;
     box-sizing: border-box;
@@ -810,4 +810,97 @@
   transform: translate(-50%, 50%); /* Ajusta la posición para centrar correctamente */
 }
 
+@media only screen and (max-width: 991px) {
+  div {
+    max-width: 100%;
+    margin: 0 auto;
+  }
 
+  nav {
+      text-align: center;
+      padding: 3%;
+      display: flex;
+      flex-wrap: wrap;
+      width: 75%;
+      margin-left: 3%
+  }
+
+  .menu {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      width: 95%;
+  }
+
+  .menu li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .perfil-userName {
+      margin-top: 10px;
+      display: block;
+      text-align: center;
+  }
+
+  .perfil {
+      text-align: center;
+  }
+
+  .app-container {
+      margin-top: 10px;
+      width: 100%;
+  }
+
+  .app-container-home,
+  .container-home {
+      max-width: 100%;
+  }
+
+  h1, h2, p {
+      font-size: 70%;
+  }
+
+  .app-container,
+  .app-container-home,
+  .container,
+  .container-home {
+    max-width: 100%;
+  }
+  .h1-home{
+    display: flex;
+    font-size: 250%;
+    margin-top: 12%;
+  }
+  .h2-derecha {
+    font-size: 130%;
+    text-align: left;
+  }
+  .h2-izquierda{
+    font-size: 130%;
+  }
+
+  .video-coche,
+  .video-puntuacion,
+  .image-izquierda,
+  .image-derecha {
+      display: none;
+  }
+
+  .section-izquierda {
+    columns: 2;
+    background-color: #c1efc2;
+    width: min-content;
+    margin-right:0;
+    margin-left:3%;
+    border-radius: 30px;
+    margin-bottom: 50px;
+    padding: 30px;
+  }
+
+  .section-derecha {
+    margin-left:3%;
+  }
+
+
+}

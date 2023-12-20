@@ -1,0 +1,66 @@
+<div class="app-container">
+
+    <div class="horizontal-line-ReservaActiva">
+      <div class="short-divider"></div>
+      <span class="line-text"> Información</span>
+      <div class="long-divider-ReservaActiva"></div>
+    </div>
+  
+    <div class="form-container"  [ngClass]="{'estilo-true': mostrarFormValoracion, 'estilo-false': !mostrarFormValoracion}">
+      <div class="form-left">
+        <label for="matricula">Matricula</label>
+        <input class="input-formularios" type="text" id="matricula" name="matricula" [(ngModel)]="matricula" readonly>
+        <label for="Modelo">Modelo</label>
+        <input class="input-formularios" type="text" id="Modelo" name="Modelo" [(ngModel)]="modelo" readonly>
+      </div>
+      <div class="form-separator"></div>
+      <div class="form-center">
+        <label for="Estado">Estado</label>
+        <input class="input-formularios" type="text" id="Estado" name="Estado" [(ngModel)]="estado" readonly>
+        <label for="Fecha">Fecha</label>
+        <input class="input-formularios" type="text" id="Fecha" name="Fecha" [(ngModel)]="fechaReserva" readonly>
+      </div>
+  
+      <div class="form-button absolute">
+        <button class="button-volver" (click)="back()"><img src="assets/volver_boton.png" alt="Volver"></button>
+        <button class="button-save" (click)="saveReserva()"> <img src="assets/finalizar_reserva_boton.png"
+            alt="Finalizar Reserva"> </button>
+        <button class="button-cancelar" (click)="anularReserva()">
+          <img src="assets/anular_reserva_boton.png" alt="Anular Reserva">
+        </button>
+      </div>
+  
+    </div>
+  
+    <div class="horizontal-line-valoracion"  *ngIf="mostrarFormValoracion">
+      <div class="short-divider-valoracion"></div>
+      <span class="line-text-valoracion">Valorar</span>
+      <div class="long-divider-valoracion"></div>
+    </div>
+    <div class="form-container-Valoracion"  *ngIf="mostrarFormValoracion" [ngClass]="{'estilo-true': mostrarFormValoracion, 'estilo-false': !mostrarFormValoracion}">
+      <div class="form-left-Valoracion">
+        <div>
+          <label for="comentario">Comentario</label>
+          <input class="input-formularios" type="text" id="comentario" name="comentario" [(ngModel)]="comentario"
+            [matTooltip]="tooltipText" (input)="updateTooltip()">
+        </div>
+      </div>
+      <div class="form-right-Valoracion">
+        <label for="">Puntuación *</label>
+        <br>
+        <ngb-rating [max]="5" [(rate)]="puntuacionReservaActiva">
+          <ng-template let-fill="fill" let-index="index">
+            <span class="star" [ngClass]="obtenerClaseEstrella(index)" (click)="puntuacion = index + 1">&#9733;</span>
+          </ng-template>
+        </ngb-rating>
+      </div>
+  
+      <div class="form-button absolute">
+        <button class="button-saveValoracion" (click)="confirmReserva()"> <img src="assets/guardar_valoracion_boton.png"
+            alt="Guardar Valoracion ">
+        </button>
+      </div>
+  
+    </div>
+  
+  </div>

@@ -1,0 +1,21 @@
+<section>
+    <div class="line-container">
+      <div class="line-small"></div>
+      <div class="text-list">Lista de Reservas</div>
+      <div class="line"></div>
+    </div>
+    
+      <div class="tabla-scroll">
+          <table class="lists">
+              <caption></caption>
+              <th></th>
+              <tbody>
+                    <tr *ngFor="let objeto of vehiculoEstado, let a=index">
+                        <td style="width: 30%;"> {{objeto}}</td>
+                        <td><img (click)="activar(objeto)"src="assets/reservar_vehiculo_boton.png" class="icon-button" alt=""></td>
+                        <td><img (click)="cancelar(objeto)" src="assets/cancelar_carga_boton.png" class="icon-button" alt=""></td>
+                    </tr>
+              </tbody>
+          </table>
+      </div>
+    </section>

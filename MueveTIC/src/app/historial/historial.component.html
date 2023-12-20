@@ -1,0 +1,38 @@
+<!-- OPCION  MENU HISTORIAL -->
+<section>
+    <div class="app-container">
+      <div class="line-small"></div>
+      <div class="text-list">Historial Reservas</div>
+      <div class="line"></div>
+    </div>
+    <div class="tabla-scroll_reservas">
+      <table class="lists">
+          <caption></caption>
+          <th></th>
+          <tbody>
+  
+              <tr *ngFor="let booking of booking_list; let i=index" >
+                  <td *ngIf="booking.state === 2"><img src="assets/reserva_icon.png" class="icon-person" alt=""></td>
+                  <td *ngIf="booking.state === 2" >{{booking.vehicle.model}}</td>
+                  <td *ngIf="booking.state === 2" >{{booking.vehicle.licensePlate}}</td>
+                  <td *ngIf="booking.state === 2 && booking.vehicle.type ==='car'" >Coche</td>
+                  <td *ngIf="booking.state === 2 && booking.vehicle.type ==='motorcycle'" >Moto</td>
+                  <td *ngIf="booking.state === 2 && booking.vehicle.type ==='scooter'" >Patinete</td>
+                  <td *ngIf="booking.state === 2" >{{booking.date}}</td>
+                  <td *ngIf="booking.state === 2">{{booking.statechange}}</td>
+  
+                  <td *ngIf="booking.state === 0" style="background-color: #f3f3f3;"><img src="assets/reserva-cancelada_boton.png" style="width: 45px; height: 45px;" class="icon-person" alt=""></td>
+                  <td *ngIf="booking.state === 0" style="background-color: #f3f3f3;">{{booking.vehicle.model}}</td>
+                  <td *ngIf="booking.state === 0" style="background-color: #f3f3f3;" >{{booking.vehicle.licensePlate}}</td>
+                  <td *ngIf="booking.state === 0 && booking.vehicle.type  ==='car'" style="background-color: #f3f3f3;">Coche</td>
+                  <td *ngIf="booking.state === 0 && booking.vehicle.type ==='motorcycle'" style="background-color: #f3f3f3;" >Moto</td>
+                  <td *ngIf="booking.state === 0 && booking.vehicle.type ==='scooter'" style="background-color: #f3f3f3;" >Patinete</td>
+                  <td *ngIf="booking.state === 0" style="background-color: #f3f3f3;"> {{booking.date}} </td>
+                  <td *ngIf="booking.state === 0" style="background-color: #f3f3f3;"> {{booking.statechange}} </td>
+  
+              </tr>
+  
+          </tbody>
+      </table>
+    </div>
+  </section>

@@ -17,6 +17,14 @@ import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatInputModule } from '@angular/material/input';
 import { PersonalComponent } from './personal/personal.component';
+import { ReservarComponent } from './reservar/reservar.component';
+import { HistorialComponent } from './historial/historial.component';
+import { ReservasActivasComponent } from './reservas-activas/reservas-activas.component';
+import { PerfilComponent } from './perfil/perfil.component';
+import { TelefonicoComponent } from './telefonico/telefonico.component';
+import { ListaReservasUsuariosTelefoniaComponent } from './lista-reservas-usuarios-telefonia/lista-reservas-usuarios-telefonia.component';
+
+
 
 
 
@@ -32,9 +40,13 @@ import { PersonalComponent } from './personal/personal.component';
     PageNotFoundComponent,
     ResetPwdComponent,
     UserComponent,
-    PersonalComponent
-
-
+    PersonalComponent,
+    ReservarComponent,
+    HistorialComponent,
+    ReservasActivasComponent,
+    PerfilComponent,
+    TelefonicoComponent,
+    ListaReservasUsuariosTelefoniaComponent
   ],
   imports: [
     BrowserModule,
@@ -54,3 +66,4 @@ import { PersonalComponent } from './personal/personal.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
