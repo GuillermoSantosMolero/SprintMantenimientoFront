@@ -1,0 +1,17 @@
+<div class="form-box1">
+  <div class="form-value">
+      <form action="">
+          <h1>Reservar vehículo a cliente</h1>
+          <div class="inputbox">
+            <input type="text" [(ngModel)]="matricula" [ngModelOptions]="{standalone: true}" required>
+            <label for="">Matricula <span>*</span></label>
+          </div>
+          <div class="inputbox">
+            <input type="text" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" required>
+            <label for="">Email cliente <span>*</span></label>
+          </div>
+
+          <button class="birthdate-label"(click)="reservar()">Reservar</button>
+      </form>
+  </div>
+</div>

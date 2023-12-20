@@ -75,11 +75,12 @@ export class LoginComponent{
           sessionStorage.setItem('role', respuesta.role);
           sessionStorage.setItem('email', this.email);
           sessionStorage.setItem('token', respuesta.token);
-          console.log(respuesta.token);
           if (respuesta.role === 'ROLE_ADMIN') {
             this.router.navigate(['admin']);
           }else if(respuesta.role === 'ROLE_MANTENANCE') {
             this.router.navigate(['personal']);
+          }else if(respuesta.role === 'ROLE_OPERATOR') {
+            this.router.navigate(['telefonica']);
           }
         },
         error: (error) => {
