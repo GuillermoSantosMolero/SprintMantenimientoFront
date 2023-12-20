@@ -253,3 +253,209 @@ p{
     color: #79ed83;
 }
 
+@media screen and (max-width: 767px) {
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&display=swap');
+
+  /* Barra de navegación */
+  .app-container {
+      background-color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 56px;
+      font-family: 'IBM Plex Sans', sans-serif;
+  }
+  
+  .container {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      width: 300px;
+  }
+  
+  form {
+      text-align: center;
+  }
+  
+  .form-group {
+      margin-bottom: 15px;
+  }
+  
+  /* Barra de navegación */
+  .navbar {
+      background-color: #ffffff;
+      width: 100%;
+      padding: 10px;
+      text-align: center;
+      height: 56px;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 26px;
+      font-family: 'IBM Plex Sans', sans-serif;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      border-width: 0 0 1px 0;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .left-content {
+      display: flex;
+      align-items: center;
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 700;
+  }
+  
+  .left-content i {
+      font-size: 20px;
+      margin-right: 10px;
+  }
+  
+  .left-content img {
+      width: 45px;
+      height: auto;
+      margin-right: 12px;
+      margin-left: 10px;
+  }
+  
+  .TIC {
+      color: #79ed83;
+  }
+  
+  /* Sección login */
+  section {
+      font-family: 'IBM Plex Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column; /* Cambiado a columna para móvil */
+  }
+  
+  .left-side {
+      background: url('src/assets/cityhome.jpeg');
+      background-size: cover;
+      background-position: center;
+      width: 100%; /* Cambiado al 100% para ocupar toda la pantalla en móvil */
+      height: 50vh; /* Ajustado para móvil */
+  }
+  
+  .right-side {
+      background: #f3f3f3;
+      height: 100vh;
+      width: 100%; /* Cambiado al 100% para ocupar toda la pantalla en móvil */
+      align-items: center;
+      text-align: center;
+  }
+  
+  .form-box,
+  .form-box-registered,
+  .form-box2 {
+      width: 89%; 
+      margin: 5% 0; /* Ajustado para móvil */
+      padding: 20px; /* Ajustado para móvil */
+  }
+  
+  .form-box h2 {
+      margin-bottom: 30px; /* Ajustado para móvil */
+  }
+  
+  .form-box-registered h2 {
+      margin-bottom: 30px; /* Ajustado para móvil */
+  }
+  
+  .form-box-registered button {
+      margin-top: 30px; /* Ajustado para móvil */
+  }
+  
+  /* Estilo específico para h2 cuando registered es true */
+  .form-box-registered h2 {
+      margin-bottom: 30px; /* Ajustado para móvil */
+  }
+  
+  .button-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px; /* Ajustado para móvil */
+  }
+  
+  button {
+      font-family: 'IBM Plex Sans', sans-serif;
+      width: 100%; /* Cambiado al 100% para ocupar toda la pantalla en móvil */
+      height: 40px;
+      border-radius: 5px;
+      background: #79ed83;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      font-size: 1em;
+      font-weight: 600;
+      color: black;
+  }
+  
+  .inputbox {
+      position: relative;
+      margin: 15px 0; /* Ajustado para móvil */
+      width: 100%; /* Cambiado al 100% para ocupar toda la pantalla en móvil */
+      border-bottom: 2px solid #79ed83;
+  }
+  
+  .inputbox label {
+      position: absolute;
+      top: 10px;
+      left: 5px;
+      transform: translateY(0);
+      font-size: 1em;
+      color: black;
+      pointer-events: none;
+      transition: .5s;
+  }
+  
+  input:focus ~ label,
+  input:valid ~ label {
+      top: -5px;
+  }
+  
+  .inputbox input {
+      width: 100%; /* Cambiado al 100% para ocupar toda la pantalla en móvil */
+      height: 40px; /* Ajustado para móvil */
+      background: transparent;
+      border: none;
+      outline: none;
+      font-size: 1em;
+      padding: 0 10px;
+      color: #79ed83;
+  }
+  
+  .inputbox ion-icon {
+      position: absolute;
+      right: 8px;
+      color: #0d4b68;
+      font-size: 1.2em;
+      top: 50%;
+      transform: translateY(-50%);
+  }
+  
+  h1 {
+      font-size: 90%; /* Ajustado para móvil */
+      width: 100%; /* Cambiado al 100% para ocupar toda la pantalla en móvil */
+      margin: 20px 0; /* Ajustado para móvil */
+  }
+  
+  h2,
+  h3,
+  h4,
+  p {
+      width: 90%; /* Cambiado al 100% para ocupar toda la pantalla en móvil */
+      margin: 10px 0; /* Ajustado para móvil */
+      padding: 3%
+  }
+  
+  a {
+      text-decoration: none;
+  }
+  
+  
+}
