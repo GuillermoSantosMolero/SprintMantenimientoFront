@@ -58,7 +58,7 @@ export class PerfilComponent {
   email: string = sessionStorage.getItem('email') ?? '';
 
   constructor(private router: Router,private userService : UserService, private http:HttpClient, private AdminService: AdminService){
-    // this.updateLists();
+    this.consultarPerfil();
     this.menu='home';
   }
 
@@ -80,6 +80,26 @@ export class PerfilComponent {
    }
    );
    }
+   consultarPerfil(){
+    this.userService.consultarPerfil().subscribe({
+      next: (response) => {
+        this.nombre = response.name;
+        this.apellidos = response.surname;
+        this.correo = response.email;
+        this.movil = response.numerPhone;
+        this.dni = response.dni;
+        this.carne = response.carnet;
+        const birthDateParts = response.birthDate.split('-');
+        this.selectedYear = parseInt(birthDateParts[0]);
+        this.selectedMonth = parseInt(birthDateParts[1]);
+        this.selectedDay = parseInt(birthDateParts[2]);
+        this.contrasenaLeida = response.password;
+      },
+      error: (error) => {
+        swal.fire('Error', error, 'error');
+      },
+    });
+  }
    updatePerfil() {
     if (!this.validateDNI(this.dni)) {
       swal.fire('Error', 'El DNI no tiene el formato correcto.Debe constar de 9 caracteres, siendo 8 números y una letra final', 'error');
