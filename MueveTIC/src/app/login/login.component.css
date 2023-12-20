@@ -254,7 +254,7 @@ p{
     color: #79ed83;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 991px) {
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&display=swap');
 
   /* Barra de navegación */
@@ -349,6 +349,9 @@ p{
       width: 100%; /* Cambiado al 100% para ocupar toda la pantalla en móvil */
       align-items: center;
       text-align: center;
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
   }
   
   .form-box,
