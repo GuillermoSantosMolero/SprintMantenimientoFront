@@ -66,22 +66,6 @@ export class HistorialComponent {
     this.menu='home';
   }
   updateLists(){
-    this.userService.getCars().subscribe(
-      respuesta=>{
-        this.cars_list=respuesta;
-      }
-    )
-    this.userService.getMotorcycles().subscribe(
-      respuesta=>{
-        this.motorcycle_list=respuesta;
-      }
-    )
-  
-    this.userService.getScooters().subscribe(
-      respuesta=>{
-        this.scooters_list=respuesta;
-      }
-    )
     this.userService.getBookings(sessionStorage.getItem('email')).pipe(
       map(respuesta => {
         // Mapear la respuesta cambiando el número por una cadena
@@ -100,22 +84,5 @@ export class HistorialComponent {
       // Asigna la respuesta mapeada a la lista
       this.booking_list = mappedRespuesta;
     });
-  
-  
-    this.userService.consultRatingCar().subscribe(
-      respuesta=>{
-        this.ratingCar_list=respuesta;
-      }
-    )
-    this.userService.consultRatingMotorcycle().subscribe(
-      respuesta=>{
-        this.ratingMoto_list=respuesta;
-      }
-    )
-    this.userService.consultRatingScooter().subscribe(
-      respuesta=>{
-        this.ratingScooter_list=respuesta;
-      }
-    )
   }
 }
