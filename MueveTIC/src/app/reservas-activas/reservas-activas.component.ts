@@ -58,7 +58,6 @@ export class ReservasActivasComponent {
   email: string = sessionStorage.getItem('email') ?? '';
 
   constructor(private router: Router,private userService : UserService, private http:HttpClient, private AdminService: AdminService){
-    this.updateLists();
     this.menu='home';
   }
   maxCharacters: number = 50;
@@ -191,60 +190,23 @@ export class ReservasActivasComponent {
     );
   }
 
-  updateLists(){
-    this.userService.getCars().subscribe(
-      respuesta=>{
-        this.cars_list=respuesta;
-      }
-    )
-    this.userService.getMotorcycles().subscribe(
-      respuesta=>{
-        this.motorcycle_list=respuesta;
-      }
-    )
-  
-    this.userService.getScooters().subscribe(
-      respuesta=>{
-        this.scooters_list=respuesta;
-      }
-    )
-    this.userService.getBookings(sessionStorage.getItem('email')).pipe(
-      map(respuesta => {
-        // Mapear la respuesta cambiando el número por una cadena
-        return respuesta.map((booking: Booking) => {
-          if (booking.state === 0) {
-            booking.statechange = 'Cancelada';
-            console.log("adios")
-          } else if (booking.state === 1) {
-            console.log("hola")
-            booking.statechange = 'Activa';
-          } else if (booking.state === 2) {
-            console.log("yepa")
-            booking.statechange = 'Histórica';
-          }
-          return booking;
-        });
-      })
-    ).subscribe(mappedRespuesta => {
-      // Asigna la respuesta mapeada a la lista
-      this.booking_list = mappedRespuesta;
+  obtenerReservaActiva(){
+    this.userService.consultUserBooking().subscribe({
+      next: (response) => {
+        this.matricula = response.vehicle.licensePlate;
+        this.modelo = response.vehicle.model;
+        this.estado = "Activa"
+        this.fechaReserva = response.date;
+        if (this.matricula == undefined){
+          swal.fire('Información', 'Actualmente no tiene ninguna reserva activa. Reserva primero uno de nuestros vehículos', 'info');
+        }
+      },
+      error: (error) => {
+        swal.fire('Error', error, 'error');
+      },
     });
-  
-  
-    this.userService.consultRatingCar().subscribe(
-      respuesta=>{
-        this.ratingCar_list=respuesta;
-      }
-    )
-    this.userService.consultRatingMotorcycle().subscribe(
-      respuesta=>{
-        this.ratingMoto_list=respuesta;
-      }
-    )
-    this.userService.consultRatingScooter().subscribe(
-      respuesta=>{
-        this.ratingScooter_list=respuesta;
-      }
-    )
+  }
+  ngOnInit(){
+    this.obtenerReservaActiva();
   }
 }
