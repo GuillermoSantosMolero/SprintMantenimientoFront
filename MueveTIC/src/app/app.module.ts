@@ -21,6 +21,8 @@ import { ReservarComponent } from './reservar/reservar.component';
 import { HistorialComponent } from './historial/historial.component';
 import { ReservasActivasComponent } from './reservas-activas/reservas-activas.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { TelefonicoComponent } from './telefonico/telefonico.component';
+import { ListaReservasUsuariosTelefoniaComponent } from './lista-reservas-usuarios-telefonia/lista-reservas-usuarios-telefonia.component';
 
 
 
@@ -42,9 +44,9 @@ import { PerfilComponent } from './perfil/perfil.component';
     ReservarComponent,
     HistorialComponent,
     ReservasActivasComponent,
-    PerfilComponent
-
-
+    PerfilComponent,
+    TelefonicoComponent,
+    ListaReservasUsuariosTelefoniaComponent
   ],
   imports: [
     BrowserModule,

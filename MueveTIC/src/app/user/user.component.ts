@@ -5,8 +5,6 @@ import { UserService } from '../user.service';
 import { HttpClient } from '@angular/common/http';
 import { AdminService } from '../admin.service';
 import { Car,Motorcycle,Scooter,Booking } from '../interfaces';
-import { map } from 'rxjs/operators';
-
 
 
 @Component({
