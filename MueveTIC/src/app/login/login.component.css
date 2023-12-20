@@ -10,6 +10,7 @@
     justify-content: flex-start;
     height: 56px;
     font-family: 'IBM Plex Sans', sans-serif;
+    width: 100%;
 
   }
 
@@ -18,7 +19,7 @@
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 100%;
   }
 
   form {
