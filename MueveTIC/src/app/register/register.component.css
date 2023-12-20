@@ -277,7 +277,7 @@ form {
   text-align: justify;
   margin-bottom:10px;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 991px) {
   /* Barra de navegación */
   .navbar {
     height: 5%; /* Ajusta la altura según sea necesario */
@@ -290,17 +290,29 @@ form {
 
   /* Formulario registro */
   .form-box1 {
-      width: 100%; /* Ocupa todo el ancho de la pantalla */
+      width: 60%; /* Ocupa todo el ancho de la pantalla */
       margin-top: 50px; /* Ajusta la separación superior según sea necesario */
       padding: 15px; /* Ajusta el relleno según sea necesario */
   }
-
-  .inputbox {
-      width: 100%; /* Ocupa todo el ancho de la pantalla */
+  .inputbox input{
+    width: 60%;
+    padding: 3%;
   }
 
+  .inputbox-calendar label {
+    left: 50%; /* Posiciona el label en el centro */
+    transform: translateX(-50%); /* Centra horizontalmente */
+    top: -20px; /* Ajusta la posición vertical según sea necesario */
+}
+
+.inputbox-calendar select {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    margin: 0; /* Elimina el margen derecho */
+    margin-top: 20px; /* Ajusta la separación superior según sea necesario */
+}
+
   .inputbox select {
-      width: 100%; /* Ocupa todo el ancho de la pantalla */
+      width: 60%; /* Ocupa todo el ancho de la pantalla */
   }
 
   .inputbox-calendar select {
@@ -308,12 +320,12 @@ form {
   }
 
   button {
-      width: 100%; /* Ocupa todo el ancho de la pantalla */
+      width: 60%; /* Ocupa todo el ancho de la pantalla */
   }
 
   /* Estilo para log in si tienes cuenta */
   .form-box2 {
-      width: 100%; /* Ocupa todo el ancho de la pantalla */
+      width: 63%; /* Ocupa todo el ancho de la pantalla */
   }
 
   h2 {
