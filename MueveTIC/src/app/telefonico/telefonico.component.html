@@ -4,7 +4,12 @@
     <span (click)="back()" class="Mueve">Mueve <span class="TIC">TIC</span></span>
     <ul class="menu">
       <li><a (click)="mostrarListaReservasUsuariosTelefoniaComponent()">Ver Reservas</a></li>
-
+      <li><a (click)="mostrarListarVehiculosComponent()">Ver vehiculos</a></li>
+      <li><a (click)="mostrarCrearReservaComponent()">Reservar Vehículo</a></li>
+      <li><a (click)="mostrarModificarReservaComponent()">ModificarReserva</a></li>
+      <li><a (click)="mostrarCancelarReservaComponent()">Cancelar Reserva</a></li>
+      
+      
     </ul>
   </nav>
   
@@ -18,6 +23,9 @@
     </div>
     <app-lista-reservas-usuarios-telefonia *ngIf="showListaReservasUsuariosTelefoniaComponent"></app-lista-reservas-usuarios-telefonia>
     <app-crear-reserva-telefonia *ngIf="showCrearReservaComponent"></app-crear-reserva-telefonia>
+    <app-cancelar-reserva-telefonia *ngIf="showCancelarReservaComponent"></app-cancelar-reserva-telefonia>
+    <app-listado-vehiculos-telefonia *ngIf="showListarVehiculosComponent"></app-listado-vehiculos-telefonia>
+    <app-modificar-reserva-telefonia *ngIf="showModificarReservaComponent"></app-modificar-reserva-telefonia>
   </div>
   
   <!-- OPCION MENU HOME -->

@@ -11,23 +11,20 @@ import { TelefoniaService } from '../telefonia.service';
 })
 export class CancelarReservaTelefoniaComponent {
   matricula = '';
-  email = '';
 
   constructor(private router: Router,private telefoniaService : TelefoniaService, private http:HttpClient){
 
   }
-  reservar(){
-    let info = {
-      "licensePlate": this.matricula,
-      "email": this.email
+  cancelar(){
+    let info= {
+      licensePlate: this.matricula
     }
-    this.telefoniaService.reservar(info).subscribe({
+    this.telefoniaService.cancelar(info).subscribe({
       next: (response: any) => {
         this.showSuccessMessage();
       },
       error: (error: any) => {
         this.showErrorMessage(error.error.message);
-
     }
     });
   }
@@ -42,8 +39,8 @@ export class CancelarReservaTelefoniaComponent {
   private showSuccessMessage() {
     Swal.fire({
       icon: 'success',
-      title: 'Reserva correcta!',
-      text: 'Se ha registrado la reserva correctamente',
+      title: 'Cancelación correcta!',
+      text: 'Se ha cancelado la reserva correctamente',
       confirmButtonText: 'Aceptar'
     });
   }

@@ -24,9 +24,9 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { TelefonicoComponent } from './telefonico/telefonico.component';
 import { CrearReservaTelefoniaComponent } from './crear-reserva-telefonia/crear-reserva-telefonia.component';
 import { ListaReservasUsuariosTelefoniaComponent } from './lista-reservas-usuarios-telefonia/lista-reservas-usuarios-telefonia.component';
-
-
-
+import { CancelarReservaTelefoniaComponent } from './cancelar-reserva-telefonia/cancelar-reserva-telefonia.component';
+import { ListadoVehiculosTelefoniaComponent } from './listado-vehiculos-telefonia/listado-vehiculos-telefonia.component';
+import { ModificarReservaTelefoniaComponent } from './modificar-reserva-telefonia/modificar-reserva-telefonia.component';
 
 
 
@@ -48,7 +48,10 @@ import { ListaReservasUsuariosTelefoniaComponent } from './lista-reservas-usuari
     PerfilComponent,
     TelefonicoComponent,
     ListaReservasUsuariosTelefoniaComponent,
-    CrearReservaTelefoniaComponent
+    CrearReservaTelefoniaComponent,
+    CancelarReservaTelefoniaComponent,
+    ListadoVehiculosTelefoniaComponent,
+    ModificarReservaTelefoniaComponent
   ],
   imports: [
     BrowserModule,

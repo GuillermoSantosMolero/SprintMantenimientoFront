@@ -1,1 +1,13 @@
-<p>cancelar-reserva-telefonia works!</p>
+<div class="form-box1">
+    <div class="form-value">
+        <form action="">
+            <h1>Cancelar reserva a cliente</h1>
+            <div class="inputbox">
+              <input type="text" [(ngModel)]="matricula" [ngModelOptions]="{standalone: true}" required>
+              <label for="">Matrícula del vehículo<span>*</span></label>
+            </div>
+  
+            <button class="birthdate-label"(click)="cancelar()">Reservar</button>
+        </form>
+    </div>
+  </div>
