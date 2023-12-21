@@ -12,7 +12,8 @@ import { AdminService } from '../admin.service';
   styleUrl: './telefonico.component.css'
 })
 export class TelefonicoComponent {
-  showListaReservasUsuariosTelefoniaComponent = true;
+  showListaReservasUsuariosTelefoniaComponent = false;
+  showCrearReservaComponent = true;
   menu: string = '';
   email: string = sessionStorage.getItem('email') ?? '';
 
@@ -21,6 +22,11 @@ export class TelefonicoComponent {
   }
   mostrarListaReservasUsuariosTelefoniaComponent(){
     this.showListaReservasUsuariosTelefoniaComponent = true;
+    this.showCrearReservaComponent = false;
+  }
+  mostrarCrearReservaComponent(){
+    this.showCrearReservaComponent = true;
+    this.showListaReservasUsuariosTelefoniaComponent = false;
   }
 
   back(){
