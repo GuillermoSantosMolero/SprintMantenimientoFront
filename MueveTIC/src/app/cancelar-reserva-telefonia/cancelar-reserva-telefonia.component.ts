@@ -5,11 +5,11 @@ import { HttpClient } from '@angular/common/http';
 import { TelefoniaService } from '../telefonia.service';
 
 @Component({
-  selector: 'app-crear-reserva-telefonia',
-  templateUrl: './crear-reserva-telefonia.component.html',
+  selector: 'app-cancelar-reserva-telefonia',
+  templateUrl: './cancelar-reserva-telefonia.component.html',
   styleUrls: ['../register/register.component.css']
 })
-export class CrearReservaTelefoniaComponent {
+export class CancelarReservaTelefoniaComponent {
   matricula = '';
   email = '';
 

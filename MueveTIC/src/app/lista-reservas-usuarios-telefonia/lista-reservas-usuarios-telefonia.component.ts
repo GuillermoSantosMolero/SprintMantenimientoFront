@@ -19,7 +19,6 @@ export class ListaReservasUsuariosTelefoniaComponent {
   showBookings(){
     this.telefoniaService.consultBookings().subscribe(
       respuesta=>{
-        console.log(respuesta)
         this.vehiculoEstado=respuesta;
       }
     )
@@ -27,7 +26,8 @@ export class ListaReservasUsuariosTelefoniaComponent {
   activar(idReserva: any){
 
   }
-  cancelar(idReserva: any){
+  cancelar(info: any){
+    console.log(info);
     
   }
   finalizar(idReserva: any){
