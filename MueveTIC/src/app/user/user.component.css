@@ -6,6 +6,7 @@
   align-items: center;
   justify-content: flex-start;
   font-family: 'IBM Plex Sans', sans-serif;
+  margin-left: 4%;
 }
 .app-container-home {
   background-color: #f0f0f0;
@@ -798,9 +799,10 @@
 
 /* Estilo adicional para el contenedor de los botones para la posición absoluta */
 .form-button.absolute {
-  position: absolute;
-  bottom: 20px; /* Distancia desde la parte inferior */
-  right: 30px; /* Distancia desde la derecha */
+  display: flex;
+  margin-top: 20%;
+
+  flex-direction: column;
 }
 
 .form-button-saveValoracion{
@@ -809,6 +811,7 @@
   left: 50%; /* Centra horizontalmente */
   transform: translate(-50%, 50%); /* Ajusta la posición para centrar correctamente */
 }
+
 
 @media only screen and (max-width: 991px) {
   div {
@@ -830,6 +833,8 @@
       padding: 0;
       margin: 0;
       width: 95%;
+      display: flex;
+      flex-wrap: wrap;
   }
 
   .menu li {
@@ -855,10 +860,21 @@
   .app-container-home,
   .container-home {
       max-width: 100%;
+      margin-bottom: 12%;
+      /* display: flex; */
+  }
+  .conjunto{
+    max-width: 100%;
+    margin-top: 120px;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   h1, h2, p {
       font-size: 70%;
+  }
+  .p-class{
+    display: none;
   }
 
   .app-container,
@@ -870,7 +886,8 @@
   .h1-home{
     display: flex;
     font-size: 250%;
-    margin-top: 12%;
+    margin-top: 25%;
+    margin-left: 3%
   }
   .h2-derecha {
     font-size: 130%;
@@ -902,5 +919,146 @@
     margin-left:3%;
   }
 
+  .lists{
+    margin-top: 200px;
+  }
+  
+  .form-right-Perfil img {
+    display: none; /* Oculta la imagen en pantallas más pequeñas */
+  }
+  .form-container-Perfil{
+    width: 85%;
+    height: 100%;
+    margin-left: 3%;
+    margin-right: 0;
+    margin-top: 45%;
+  }
+  .button-volver{
+    display: none;
+  }
+  .form-right-Perfil{
+    display: none;
+  }
+  .button-saveValoracion {
+    position: absolute;
+    bottom: 50%; /* Centra verticalmente en la parte inferior */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, 50%); /* Ajusta la posición para centrar correctamente */
+    background-color: transparent; /* Fondo transparente */
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    width: 170px;
+    margin-right: 470px;
+  }
+  
+  .button-saveValoracion img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+  }
+  
+  .button-eliminar {
+    position: absolute;
+    bottom: 50%; /* Centra verticalmente en la parte inferior */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, 50%); /* Ajusta la posición para centrar correctamente */
+    background-color: transparent; /* Fondo transparente */
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    width: 170px;
+    margin-right: 250px; /* Ajusta según sea necesario */
+  }
+  
+  .button-eliminar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+  }
+  .estilo-false {
+    margin-top: 20%;
+  }
+  .line-text{
+    display: none;
+  }
+  .estilo-true{
+    margin-top:20%;
+    width: 90%;
+  }
+  .line-text-valoracion{
+    margin-left: 4%
+  }
+
+/* Estilo para la línea horizontal */
+.horizontal-line-valoracion {
+  display: flex;
+  margin-right: 0;
+  margin-left: 4%; 
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2%;
+}
+
+.short-divider-valoracion {
+  flex: 0 0 5%; /* No ocupa espacio adicional y tiene un ancho del 5% */
+  border-top: 4px solid #7d94f0; /* Línea horizontal de color verde */
+}
+
+/* Estilo para el texto "Consultar" */
+.line-text-valoracion {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 700;
+  padding: 1%; /* Ajuste de espacio en todas las direcciones */
+  text-align: center; /* Alinea el texto al centro */
+}
+
+/* Estilo para la barra derecha de 30% */
+.long-divider-valoracion {
+  flex: 0 0 21%; /* No ocupa espacio adicional y tiene un ancho del 21% */
+  border-top: 4px solid #7d94f0; /* Línea horizontal de color verde */
+}
+
+.form-container-Valoracion {
+  margin-top: 2%;
+  background-color: #ffffff;
+  font-family: 'IBM Plex Sans', sans-serif;
+  width: 60%; /* Ajusta el ancho según tus necesidades */
+  height: auto; /* Ajusta la altura según tus necesidades */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.form-left-Valoracion {
+  margin-top: 2%;
+  width: 40%; /* Ajusta el ancho según tus necesidades */
+  padding-right: 1%; /* Espaciado a la derecha de la parte izquierda */
+}
+
+.form-right-Valoracion {
+  margin-top: -8%; /* Ajusta el margen superior según tus necesidades */
+  flex-direction: column;
+  margin-left: 42%; /* Ajusta el margen izquierdo según tus necesidades */
+}
+
+.form-button.absolute {
+  position: absolute;
+}
+
+.button-saveValoracion {
+  background-color: transparent; /* Fondo transparente */
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 20%; /* Ajusta el ancho según tus necesidades */
+  margin-right: 10%; /* Ajusta el margen derecho según tus necesidades */
+}
+
+.button-saveValoracion img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
 
 }
