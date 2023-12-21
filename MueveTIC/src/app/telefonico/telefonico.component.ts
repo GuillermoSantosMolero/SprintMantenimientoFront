@@ -9,11 +9,12 @@ import { AdminService } from '../admin.service';
 @Component({
   selector: 'app-telefonico',
   templateUrl: './telefonico.component.html',
-  styleUrl: './telefonico.component.css'
+  styleUrls: ['../admin/admin.component.css','../user/user.component.css']
 })
 export class TelefonicoComponent {
   showListaReservasUsuariosTelefoniaComponent = false;
   showCrearReservaComponent = true;
+  showCancelarReservaComponent = false;
   menu: string = '';
   email: string = sessionStorage.getItem('email') ?? '';
 
@@ -23,12 +24,18 @@ export class TelefonicoComponent {
   mostrarListaReservasUsuariosTelefoniaComponent(){
     this.showListaReservasUsuariosTelefoniaComponent = true;
     this.showCrearReservaComponent = false;
+    this.showCancelarReservaComponent = false;
   }
   mostrarCrearReservaComponent(){
     this.showCrearReservaComponent = true;
     this.showListaReservasUsuariosTelefoniaComponent = false;
+    this.showCancelarReservaComponent = false;
   }
-
+  mostrarCancelarReservaComponent(){
+    this.showListaReservasUsuariosTelefoniaComponent = false;
+    this.showCrearReservaComponent = false;
+    this.showCancelarReservaComponent = true;
+  }
   back(){
    this.menu='home';
   }

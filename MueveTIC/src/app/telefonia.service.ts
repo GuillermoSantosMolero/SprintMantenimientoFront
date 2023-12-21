@@ -18,7 +18,10 @@ export class TelefoniaService {
   reservar(info:any){
     return this.httpClient.post<any>(`${apiBaseUrl}/operator/createBooking`,info)
    }
-  cancelarReserva(email:any){
-    
+  cancelar(info:any){
+    return this.httpClient.put<any>(
+      `${apiBaseUrl}/operator/cancelBooking`,
+      info
+    );
   }
 }
