@@ -15,6 +15,7 @@ export class TelefonicoComponent {
   showListaReservasUsuariosTelefoniaComponent = false;
   showCrearReservaComponent = true;
   showCancelarReservaComponent = false;
+  showListarVehiculosComponent = false;
   menu: string = '';
   email: string = sessionStorage.getItem('email') ?? '';
 
@@ -25,16 +26,25 @@ export class TelefonicoComponent {
     this.showListaReservasUsuariosTelefoniaComponent = true;
     this.showCrearReservaComponent = false;
     this.showCancelarReservaComponent = false;
+    this.showListarVehiculosComponent = false;
   }
   mostrarCrearReservaComponent(){
     this.showCrearReservaComponent = true;
     this.showListaReservasUsuariosTelefoniaComponent = false;
     this.showCancelarReservaComponent = false;
+    this.showListarVehiculosComponent = false;
   }
   mostrarCancelarReservaComponent(){
     this.showListaReservasUsuariosTelefoniaComponent = false;
     this.showCrearReservaComponent = false;
     this.showCancelarReservaComponent = true;
+    this.showListarVehiculosComponent = false;
+  }
+  mostrarListarVehiculosComponent(){
+    this.showListaReservasUsuariosTelefoniaComponent = false;
+    this.showCrearReservaComponent = false;
+    this.showCancelarReservaComponent = false;
+    this.showListarVehiculosComponent = true;
   }
   back(){
    this.menu='home';

@@ -3,17 +3,17 @@ import { Router } from '@angular/router';
 import { TelefoniaService } from '../telefonia.service';
 import { HttpClient } from '@angular/common/http';
 @Component({
-  selector: 'app-lista-reservas-usuarios-telefonia',
-  templateUrl: './lista-reservas-usuarios-telefonia.component.html',
+  selector: 'app-listado-vehiculos-telefonia',
+  templateUrl: './listado-vehiculos-telefonia.component.html',
   styleUrl: '../admin/admin.component.css'
 })
-export class ListaReservasUsuariosTelefoniaComponent {
+export class ListadoVehiculosTelefoniaComponent {
   vehiculoEstado:any[]=[];
   constructor(private router: Router,private telefoniaService : TelefoniaService, private http:HttpClient) {
-    this.showBookings();
+    this.showVehiculos();
   }
-  showBookings(){
-    this.telefoniaService.consultBookings().subscribe(
+  showVehiculos(){
+    this.telefoniaService.consultAllVehicles().subscribe(
       respuesta=>{
         this.vehiculoEstado=respuesta;
       }
@@ -30,3 +30,4 @@ export class ListaReservasUsuariosTelefoniaComponent {
     
   }
 }
+

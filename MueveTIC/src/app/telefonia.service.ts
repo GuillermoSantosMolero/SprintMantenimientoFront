@@ -14,7 +14,12 @@ export class TelefoniaService {
     return this.httpClient.get<any>(`${apiBaseUrl}/bookings/consultAllBookings`);
   
   }
-
+  consultAllVehicles() : Observable<any>{
+    
+    return this.httpClient.get<any>(`${apiBaseUrl}/vehicle/consultAllVehicles`);
+  
+  }
+  
   reservar(info:any){
     return this.httpClient.post<any>(`${apiBaseUrl}/operator/createBooking`,info)
    }

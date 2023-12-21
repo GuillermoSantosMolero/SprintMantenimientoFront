@@ -6,6 +6,8 @@
       <li><a (click)="mostrarListaReservasUsuariosTelefoniaComponent()">Ver Reservas</a></li>
       <li><a (click)="mostrarCrearReservaComponent()">Reservar Vehículo</a></li>
       <li><a (click)="mostrarCancelarReservaComponent()">Cancelar Reserva</a></li>
+      <li><a (click)="mostrarListarVehiculosComponent()">Ver vehiculos</a></li>
+      
     </ul>
   </nav>
   
@@ -20,6 +22,7 @@
     <app-lista-reservas-usuarios-telefonia *ngIf="showListaReservasUsuariosTelefoniaComponent"></app-lista-reservas-usuarios-telefonia>
     <app-crear-reserva-telefonia *ngIf="showCrearReservaComponent"></app-crear-reserva-telefonia>
     <app-cancelar-reserva-telefonia *ngIf="showCancelarReservaComponent"></app-cancelar-reserva-telefonia>
+    <app-listado-vehiculos-telefonia *ngIf="showListarVehiculosComponent"></app-listado-vehiculos-telefonia>
   </div>
   
   <!-- OPCION MENU HOME -->
