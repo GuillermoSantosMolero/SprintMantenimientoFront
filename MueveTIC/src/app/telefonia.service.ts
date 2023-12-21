@@ -29,4 +29,10 @@ export class TelefoniaService {
       info
     );
   }
+  modificarReserva(info:any){
+    return this.httpClient.put<any>(
+      `${apiBaseUrl}/operator/updateBooking`,
+      info
+    );
+  }
 }

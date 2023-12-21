@@ -1,0 +1,23 @@
+<div class="form-box1">
+    <div class="form-value">
+        <form action="">
+            <h1>Modificar reserva</h1>
+            <div class="inputbox">
+              <input type="text" [(ngModel)]="matricula" [ngModelOptions]="{standalone: true}" required>
+              <label for="">Matricula <span>*</span></label>
+            </div>
+            <div class="inputbox">
+              <input type="text" [(ngModel)]="comentario" [ngModelOptions]="{standalone: true}" required>
+              <label for="">Comentario <span>*</span></label>
+            </div>
+            <label for="">Puntuación *</label>
+            <br>
+            <ngb-rating [max]="5" [(rate)]="puntuacionReservaActiva">
+            <ng-template let-fill="fill" let-index="index">
+                <span class="star" [ngClass]="obtenerClaseEstrella(index)" (click)="puntuacion = index + 1">&#9733;</span>
+            </ng-template>
+            </ngb-rating>
+            <button class="birthdate-label"(click)="modificar()">Modificar</button>
+        </form>
+    </div>
+  </div>

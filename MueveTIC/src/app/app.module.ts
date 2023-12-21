@@ -26,8 +26,7 @@ import { CrearReservaTelefoniaComponent } from './crear-reserva-telefonia/crear-
 import { ListaReservasUsuariosTelefoniaComponent } from './lista-reservas-usuarios-telefonia/lista-reservas-usuarios-telefonia.component';
 import { CancelarReservaTelefoniaComponent } from './cancelar-reserva-telefonia/cancelar-reserva-telefonia.component';
 import { ListadoVehiculosTelefoniaComponent } from './listado-vehiculos-telefonia/listado-vehiculos-telefonia.component';
-
-
+import { ModificarReservaTelefoniaComponent } from './modificar-reserva-telefonia/modificar-reserva-telefonia.component';
 
 
 
@@ -51,7 +50,8 @@ import { ListadoVehiculosTelefoniaComponent } from './listado-vehiculos-telefoni
     ListaReservasUsuariosTelefoniaComponent,
     CrearReservaTelefoniaComponent,
     CancelarReservaTelefoniaComponent,
-    ListadoVehiculosTelefoniaComponent
+    ListadoVehiculosTelefoniaComponent,
+    ModificarReservaTelefoniaComponent
   ],
   imports: [
     BrowserModule,
