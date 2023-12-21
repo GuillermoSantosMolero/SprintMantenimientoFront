@@ -27,6 +27,22 @@ export class AdminService {
 
   }
 
+  getOperators() : Observable<any>{
+    // Supongamos que tienes el token almacenado en alguna variable llamada token
+    const token = sessionStorage.getItem('token');
+
+    // Configuración de la cabecera con el token de autorización
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    });
+
+    // Agregar las cabeceras a la solicitud HTTP
+    const options = { headers: headers };
+    return this.httpClient.get<any>(`${apiBaseUrl}/admins/consultOperator`,options)
+
+  }
+
   getPersonal() : Observable<any>{
     // Supongamos que tienes el token almacenado en alguna variable llamada token
     const token = sessionStorage.getItem('token');
@@ -102,6 +118,17 @@ export class AdminService {
     return this.httpClient.put<any>(`${apiBaseUrl}/admins/activateAdmin`,info,{headers})
   }
 
+  activateOperator(info: any){
+    const token = sessionStorage.getItem('token');
+
+    // Configuración de la cabecera con el token de autorización
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    });
+    return this.httpClient.put<any>(`${apiBaseUrl}/admins/activateOperator`,info,{headers})
+  }
+
   activatePersonal(info: any){
     const token = sessionStorage.getItem('token');
 
@@ -133,6 +160,17 @@ export class AdminService {
     'Authorization': `Bearer ${token}`
   });
   return this.httpClient.post<any>(`${apiBaseUrl}/person/register-admin`,info,{headers})
+ }
+
+ addOperator(info:any){
+  const token = sessionStorage.getItem('token');
+
+  // Configuración de la cabecera con el token de autorización
+  const headers = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${token}`
+  });
+  return this.httpClient.post<any>(`${apiBaseUrl}/person/register-operator`,info,{headers})
  }
 
  modifyAdmin(info:any){

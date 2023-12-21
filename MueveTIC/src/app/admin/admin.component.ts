@@ -17,6 +17,7 @@ import { of} from 'rxjs';
 export class AdminComponent {
   lista_admin: Admin[] = [];
   lista_personal:Personal[]=[];
+  lista_operator:Admin[] = [];
   lista_user:User[]=[];
   showList: boolean = true;
   currentRole: string = ''; // Rol por defecto
@@ -552,6 +553,14 @@ handleSaveButtonClick() {
     this.handleMaintenanceAddition();
   } else if (this.action === 'modificar' && this.currentRole === 'ROLE_USER') {
     this.handleUserModification();
+  } else if (this.action === 'añadir' && this.currentRole === 'ROLE_OPERATOR') {
+    this.checkCityValidity().subscribe((isValidCity: boolean) => {
+      if (isValidCity) {
+        this.handleOperatorAddition();
+      } else {
+        // La ciudad no existe, no se agrega el administrador.
+      }
+    });
   }
 }
 
@@ -621,6 +630,30 @@ private handleAdminAddition() {
     next:(response) => {
       this.updateLists();
       this.showSuccessMessage('Administrador agregado', 'Administrador agregado correctamente');
+    },
+    error:(error) => {
+      this.showErrorMessage('Error', error.error);
+    }
+});
+}
+
+private handleOperatorAddition() {
+  const newOperatorData: any = {
+    name: this.name,
+    surname: this.surname,
+    email: this.email,
+    driverLicense: this.carnet,
+    dni: this.dni,
+    numberPhone: this.numberPhone,
+    city: "Ciudad Real",
+    password: "Hola123*",
+    role: this.currentRole,
+  };
+
+  this.AdminService.addOperator(newOperatorData).subscribe({
+    next:(response) => {
+      this.updateLists();
+      this.showSuccessMessage('Operador agregado', 'Operador agregado correctamente');
     },
     error:(error) => {
       this.showErrorMessage('Error', error.error);
@@ -797,6 +830,11 @@ handleCancelButtonClick(){
         this.lista_admin=respuesta;
       }
     )
+    this.AdminService.getOperators().subscribe(
+      respuesta=>{
+        this.lista_operator=respuesta;
+      }
+    )
 
     this.AdminService.getPersonal().subscribe(
       respuesta=>{
@@ -886,6 +924,53 @@ handleCancelButtonClick(){
 
       if(result.isConfirmed){
         this.AdminService.activateAdmin(info).subscribe({
+          next: respuesta => {
+            this.updateLists();
+            //Alerta
+            Swal.fire({
+              title: 'Administrador Habilitado',
+              text: 'Administrador Habilitado correctamente',
+              icon: 'success',
+              confirmButtonText: 'Aceptar',
+              confirmButtonColor:'#79ed83',
+            });
+          },
+          error: error => {
+            Swal.fire({
+              title: 'Error',
+              text: error.error,
+              icon: 'error',
+              confirmButtonText: 'Aceptar'
+            });
+          }
+      });
+      }
+    });
+
+   }
+
+   activateOperator(index:number, email:string){
+
+    let info ={
+      email:email,
+    }
+
+    Swal.fire({
+      title: 'Activar Operador',
+      text: '¿Desea activar este operador?',
+      icon: 'warning',
+      confirmButtonText: 'Aceptar',
+      confirmButtonColor:'#79ed83',
+      showCancelButton:true,
+      cancelButtonColor:'#fa5050',
+      cancelButtonText:'Cancelar'
+    }).then((result)=>{
+      if(result.value){
+        console.log(result.value)
+      }
+
+      if(result.isConfirmed){
+        this.AdminService.activateOperator(info).subscribe({
           next: respuesta => {
             this.updateLists();
             //Alerta

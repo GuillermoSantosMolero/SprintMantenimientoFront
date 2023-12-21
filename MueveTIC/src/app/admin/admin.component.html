@@ -9,6 +9,8 @@
             <li class="opcion"><a (click)="changeRole('ROLE_ADMIN')">Administradores</a></li>
             <li class="opcion"><a (click)="changeRole('ROLE_USER')">Usuarios</a></li>
             <li class="opcion"><a (click)="changeRole('ROLE_MANTENANCE')">Personal de Mantenimiento</a></li>
+            <li class="opcion"><a (click)="changeRole('ROLE_OPERATOR')">Personal de Telefonía</a></li>
+
           </ul>
         </li>
         <li><a (click)="changeMenu('gestion_vehiculo')" [class.active]="menu === 'gestion_vehiculo'">Gestión Vehículos</a>
@@ -68,6 +70,35 @@
   </div>
 </section>
 
+<section *ngIf="showList && currentRole==='ROLE_OPERATOR'">
+  <div class="line-container">
+      <div class="line-small"></div>
+      <div class="text-list">Lista del Personal de Telefonía</div>
+      <div class="line"></div>
+  </div>
+  <div class="tabla-scroll">
+    <table class="lists">
+        <caption></caption>
+        <th></th>
+        <tbody>
+          <tr *ngFor="let operator of lista_operator; let i=index" >
+            <td *ngIf="operator.validation === 1"><img src="assets/person_logo.png" class="icon-person" alt=""></td>
+            <td *ngIf="operator.validation === 1">{{operator.name}}</td>
+            <td *ngIf="operator.validation === 1"> {{operator.surname}}</td>
+            <td *ngIf="operator.validation === 1" style="background-color: white; margin-left: 50px;"><img src="assets/reservar_vehiculo_boton.png" style="display: none;" class="icon-active" alt=""></td>
+            <td *ngIf="operator.validation === 0" style="background-color: #f3f3f3; width:5%"><img src="assets/person_logo_cancel.png" style="width: 48px; height: 48px;" class="icon-active" alt=""></td>
+            <td *ngIf="operator.validation === 0" style="background-color: #f3f3f3;">{{operator.name}}</td>
+            <td *ngIf="operator.validation === 0" style="background-color: #f3f3f3;"> {{operator.surname}} </td>
+            <td *ngIf="operator.validation === 0" style="background-color: #f3f3f3;"><img (click)="activateOperator(i, operator.email)" src="assets/reservar_vehiculo_boton.png" class="icon-active" alt=""></td>
+              </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+  <img (click)="changeCRUD('añadir', 0, '')"  src="assets/añadir_boton.png" class="button-add-center" alt=""[class.active]="action === 'añadir'"/>
+</div>
+
+</section>
 
 
 <section *ngIf="showList && currentRole==='ROLE_MANTENANCE'">
@@ -775,7 +806,7 @@
   <label for="phone">Móvil</label>
   <input class="input" type="text" id="phone" name="phone"  [(ngModel)]="numberPhone" [disabled]="action === 'Consultar'">
   </div>
-  <div *ngIf="currentRole === 'ROLE_ADMIN' || currentRole === 'ROLE_MANTENANCE'">
+  <div *ngIf="currentRole === 'ROLE_ADMIN' || currentRole === 'ROLE_MANTENANCE' || currentRole === 'ROLE_OPERATOR'">
     <label for="city">Ciudad</label>
     <input class="input" type="text" id="city" name="city" [(ngModel)]="city" [disabled]="action === 'Consultar'">
     <div *ngIf="action === 'añadir'">
