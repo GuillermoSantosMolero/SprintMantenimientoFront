@@ -5,7 +5,8 @@
       <div class="text-list">Reservar Vehículo</div>
       <div class="line"></div>
     </div>
-    <p class="p-class">Para reservar un vehículo seleccione el tipo de vehículo que desee alquilar y pulse en la opción de reservarlo.</p>
+    <div class="conjunto">
+      <p class="p-class">Para reservar un vehículo seleccione el tipo de vehículo que desee alquilar y pulse en la opción de reservarlo.</p>
       <div class="sub-text-list">Tipo de Vehículo</div>
 
       <div class="container">
@@ -18,6 +19,8 @@
         <input class="filtro_input" type="radio" [(ngModel)]="filter" value="patinete" name="size" id="patinete">
         <label class ="filtro_label" for="patinete" >Patinete</label>
     </div>
+    </div>
+
 
       <div *ngIf="filter === 'coche'">
         <div class="tabla-scroll">
