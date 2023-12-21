@@ -1,0 +1,135 @@
+  <!-- OPCION MENU RESERVAR -->
+  <section>
+    <div class="app-container">
+      <div class="line-small"></div>
+      <div class="text-list">Reservar Vehículo</div>
+      <div class="line"></div>
+    </div>
+    <div class="conjunto">
+      <p class="p-class">Para reservar un vehículo seleccione el tipo de vehículo que desee alquilar y pulse en la opción de reservarlo.</p>
+      <div class="sub-text-list">Tipo de Vehículo</div>
+
+      <div class="container">
+        <input class="filtro_input" type="radio" [(ngModel)]="filter" value="coche" name="size" id="coche">
+        <label class ="filtro_label" for="coche" >Coche</label>
+
+        <input class="filtro_input" type="radio" [(ngModel)]="filter" value="moto" name="size" id="moto">
+        <label class ="filtro_label" for="moto">Moto</label>
+
+        <input class="filtro_input" type="radio" [(ngModel)]="filter" value="patinete" name="size" id="patinete">
+        <label class ="filtro_label" for="patinete" >Patinete</label>
+    </div>
+    </div>
+
+
+      <div *ngIf="filter === 'coche'">
+        <div class="tabla-scroll">
+          <table class="lists">
+              <caption></caption>
+              <th></th>
+              <tbody>
+                  <tr *ngFor="let car of cars_list; let i=index" >
+                      <td *ngIf="count_active_booking === 0" ><img src="assets/vehiculo_icon.png" class="icon-person" alt=""></td>
+                      <td *ngIf="count_active_booking === 0">{{car.model}}</td>
+                      <td *ngIf="count_active_booking === 0" > {{car.licensePlate}}</td>
+                      <td *ngIf="count_active_booking === 0">
+                          <ngb-rating [max]="5" [(rate)]="puntuacion" >
+                            <ng-template let-fill="fill" let-index="index">
+                              <span class="star" [ngClass]="fillStars(index, car.model, ratingCar_list)" (click)="puntuacion = index + 1">&#9733;</span>
+                            </ng-template>
+                            </ngb-rating>
+                      </td>
+                      <td *ngIf="count_active_booking === 0"><img (click)="makeBooking(i, car.model, car.licensePlate)" src="assets/añadir_carga_boton.png" class="icon-reserva" alt=""></td>
+
+                      <td *ngIf="count_active_booking === 1" style="background-color: #f3f3f3;"><img src="assets/vehiculo_icon.png" class="icon-person" alt=""></td>
+                      <td *ngIf="count_active_booking === 1" style="background-color: #f3f3f3;">{{car.model}}</td>
+                      <td *ngIf="count_active_booking === 1" style="background-color: #f3f3f3;"> {{car.licensePlate}}</td>
+                      <td *ngIf="count_active_booking === 1" style="background-color: #f3f3f3;">
+                          <ngb-rating [max]="5" [(rate)]="puntuacion" >
+                            <ng-template let-fill="fill" let-index="index">
+                              <span class="star" [ngClass]="fillStars(index, car.model,ratingCar_list)" (click)="puntuacion = index + 1">&#9733;</span>
+                            </ng-template>
+                            </ngb-rating>
+                      </td>
+                      <td *ngIf="count_active_booking === 1" style="background-color: #f3f3f3; display: none;"><img (click)="makeBooking(i, car.model, car.licensePlate)" src="assets/añadir_carga_boton.png" class="icon-reserva" alt=""></td>
+
+                  </tr>
+              </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div *ngIf="filter === 'moto'">
+        <div class="tabla-scroll">
+          <table class="lists">
+              <caption></caption>
+              <th></th>
+              <tbody>
+                  <tr *ngFor="let moto of motorcycle_list; let i=index" >
+                      <td *ngIf="count_active_booking === 0"><img src="assets/vehiculo_icon.png" class="icon-person" alt=""></td>
+                      <td *ngIf="count_active_booking === 0">{{moto.model}}</td>
+                      <td *ngIf="count_active_booking === 0">{{moto.licensePlate}}</td>
+                      <td *ngIf="count_active_booking === 0">
+                          <ngb-rating [max]="5" [(rate)]="puntuacion" >
+                            <ng-template let-fill="fill" let-index="index">
+                              <span class="star" [ngClass]="fillStars(index, moto.model,ratingMoto_list)" (click)="puntuacion = index + 1">&#9733;</span>
+                            </ng-template>
+                            </ngb-rating>
+                      </td>
+                      <td *ngIf="count_active_booking === 0"><img (click)="makeBooking(i, moto.model, moto.licensePlate)" src="assets/añadir_carga_boton.png" class="icon-reserva" alt=""></td>
+
+                      <td *ngIf="count_active_booking === 1" style="background-color: #f3f3f3;"><img src="assets/vehiculo_icon.png" class="icon-person" alt=""></td>
+                      <td *ngIf="count_active_booking === 1" style="background-color: #f3f3f3;">{{moto.model}}</td>
+                      <td *ngIf="count_active_booking === 1" style="background-color: #f3f3f3;"> {{moto.licensePlate}}</td>
+                      <td *ngIf="count_active_booking === 1" style="background-color: #f3f3f3;">
+                          <ngb-rating [max]="5" [(rate)]="puntuacion" >
+                            <ng-template let-fill="fill" let-index="index">
+                              <span class="star" [ngClass]="fillStars(index, moto.model, ratingMoto_list)" (click)="puntuacion = index + 1">&#9733;</span>
+                            </ng-template>
+                            </ngb-rating>
+                      </td>
+                      <td *ngIf="count_active_booking === 1" style="background-color: #f3f3f3; display: none;"><img (click)="makeBooking(i, moto.model, moto.licensePlate)" src="assets/añadir_carga_boton.png" class="icon-reserva" alt=""></td>
+
+                  </tr>
+              </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div *ngIf="filter === 'patinete'">
+        <div class="tabla-scroll">
+          <table class="lists">
+              <caption></caption>
+              <th></th>
+              <tbody>
+                  <tr *ngFor="let scooter of scooters_list; let i=index" >
+                      <td *ngIf="count_active_booking === 0"><img src="assets/vehiculo_icon.png" class="icon-person" alt=""></td>
+                      <td *ngIf="count_active_booking === 0">{{scooter.model}}</td>
+                      <td *ngIf="count_active_booking === 0"> {{scooter.licensePlate}}</td>
+                      <td *ngIf="count_active_booking === 0">
+                          <ngb-rating [max]="5" [(rate)]="puntuacion" >
+                            <ng-template let-fill="fill" let-index="index">
+                              <span class="star" [ngClass]="fillStars(index, scooter.model,ratingScooter_list)" (click)="puntuacion = index + 1">&#9733;</span>
+                            </ng-template>
+                            </ngb-rating>
+                      </td>
+                      <td *ngIf="count_active_booking === 0"><img (click)="makeBooking(i, scooter.model,scooter.licensePlate)" src="assets/añadir_carga_boton.png" class="icon-reserva" alt=""></td>
+
+                      <td *ngIf="count_active_booking === 1" style="background-color: #f3f3f3;"><img src="assets/vehiculo_icon.png" class="icon-person" alt=""></td>
+                      <td *ngIf="count_active_booking === 1" style="background-color: #f3f3f3;">{{scooter.model}}</td>
+                      <td *ngIf="count_active_booking === 1" style="background-color: #f3f3f3;"> {{scooter.licensePlate}}</td>
+                      <td *ngIf="count_active_booking === 1" style="background-color: #f3f3f3;">
+                          <ngb-rating [max]="5" [(rate)]="puntuacion" >
+                            <ng-template let-fill="fill" let-index="index">
+                              <span class="star" [ngClass]="fillStars(index,scooter.model,ratingScooter_list)" (click)="puntuacion = index + 1">&#9733;</span>
+                            </ng-template>
+                            </ngb-rating>
+                      </td>
+                      <td *ngIf="count_active_booking === 1" style="background-color: #f3f3f3; display: none;"><img (click)="makeBooking(i, scooter.model, scooter.licensePlate)" src="assets/añadir_carga_boton.png" class="icon-reserva" alt=""></td>
+
+                  </tr>
+              </tbody>
+          </table>
+        </div>
+      </div>
+    </section>

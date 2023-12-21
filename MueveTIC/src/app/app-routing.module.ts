@@ -14,7 +14,7 @@ import { PersonalComponent } from './personal/personal.component';
 import { AdminSecurity } from './admin-security.guard';
 import { UserSecurity } from './user-security.guard';
 import {PersonalSecurity} from './personal-security.guard';
-
+import { TelefonicoComponent } from './telefonico/telefonico.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -25,6 +25,7 @@ const routes: Routes = [
   { path: 'user', component: UserComponent, canActivate: [AuthGuard, UserSecurity]},
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuard, AdminSecurity]},
   { path: 'personal', component: PersonalComponent, canActivate: [AuthGuard,PersonalSecurity] },
+  { path: 'telefonica', component: TelefonicoComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
 

@@ -1,31 +1,33 @@
 <div >
   <nav>
-    <a (click)="changeMenu('home')"> <img src="assets/logo.png" alt="" class="app_logo"></a>
-    <span (click)="changeMenu('home')" class="Mueve">Mueve <span class="TIC">TIC</span></span>
+    <a (click)="back()"> <img src="assets/logo.png" alt="" class="app_logo"></a>
+    <span (click)="back()" class="Mueve">Mueve <span class="TIC">TIC</span></span>
     <ul class="menu">
-      <li><a (click)="showVehiculos()">Reservar Vehículos</a></li>
-      <li><a (click)="showReservaActiva()">Reservas Activas</a></li>
-      <li><a (click)="showHistorial()">Historial Reservas</a></li>
-      <li><a (click)="showPerfil()">Mi Perfil</a></li>
-
+      <li><a (click)="mostrarListaReservasUsuariosTelefoniaComponent()">Ver Reservas</a></li>
+      <li><a (click)="mostrarListarVehiculosComponent()">Ver vehiculos</a></li>
+      <li><a (click)="mostrarCrearReservaComponent()">Reservar Vehículo</a></li>
+      <li><a (click)="mostrarModificarReservaComponent()">ModificarReserva</a></li>
+      <li><a (click)="mostrarCancelarReservaComponent()">Cancelar Reserva</a></li>
+      
+      
     </ul>
   </nav>
-
-  <label class="perfil-userName">{{ getNameUser(email) }}</label>
-  <div class="perfil">
-
-    <img src="assets/perfil_icon.png" class="icon-perfil" alt="">
-    <ul class="desplegable-perfil">
-      <li><a (click)="logout()"><img src="assets/log_out.png" alt="" class="icon-menu">Cerrar Sesión</a></li>
-    </ul>
+  
+    <label class="perfil-userName">{{ getNameUser(email) }}</label>
+    <div class="perfil">
+  
+      <img src="assets/perfil_icon.png" class="icon-perfil" alt="">
+      <ul class="desplegable-perfil">
+        <li><a (click)="logout()"><img src="assets/log_out.png" alt="" class="icon-menu">Cerrar Sesión</a></li>
+      </ul>
+    </div>
+    <app-lista-reservas-usuarios-telefonia *ngIf="showListaReservasUsuariosTelefoniaComponent"></app-lista-reservas-usuarios-telefonia>
+    <app-crear-reserva-telefonia *ngIf="showCrearReservaComponent"></app-crear-reserva-telefonia>
+    <app-cancelar-reserva-telefonia *ngIf="showCancelarReservaComponent"></app-cancelar-reserva-telefonia>
+    <app-listado-vehiculos-telefonia *ngIf="showListarVehiculosComponent"></app-listado-vehiculos-telefonia>
+    <app-modificar-reserva-telefonia *ngIf="showModificarReservaComponent"></app-modificar-reserva-telefonia>
   </div>
-  <app-reservar *ngIf="showVehiculosComponent"></app-reservar>
-  <app-historial *ngIf="showHistorialComponent"></app-historial>
-  <app-reservas-activas *ngIf="showReservaActivaComponent"></app-reservas-activas>
-  <app-perfil *ngIf="showPerfilComponent"></app-perfil>
-  <!-- <app-user *ngIf="showUserComponent"></app-user> -->
-  </div>
-
+  
   <!-- OPCION MENU HOME -->
   <div class="app-container-home">
     <section class="container-home">
@@ -41,12 +43,12 @@
           <source src="assets/videoCoche.mp4" type="video/mp4">
         </video>
       </div>
-
+  
       <div class="section-izquierda">
         <div class="image-izquierda">
           <img src="assets/reloj.png" alt="Imagen 2">
         </div>
-
+  
         <div class="text">
           <h2 class="h2-izquierda">Alquila un vehículo en minutos</h2>
           <p>Con MueveTIC puedes alquilar un vehículo en <span class="palabra-clave-izq">minutos</span> No te preocupes
@@ -54,7 +56,7 @@
               class="palabra-clave-izq">movilidad </span>urbana<span class="palabra-clave-izq"> sostenible.</span> </p>
         </div>
       </div>
-
+  
       <div class="section-derecha">
         <div class="text">
           <h2 class="h2-derecha">Da tu opinión y valora los servicios</h2>
@@ -68,7 +70,7 @@
           </video>
         </div>
       </div>
-
+  
       <div class="section-izquierda">
         <div class="image-izquierda">
           <img src="assets/duda.png" alt="Imagen 2">
@@ -82,23 +84,6 @@
         </div>
       </div>
     </section>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  </div>
+  
+  

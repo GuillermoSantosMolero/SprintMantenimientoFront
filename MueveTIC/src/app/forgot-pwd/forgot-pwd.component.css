@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&display=swap');
 
-/*Barra de navegación*/
+/* Barra de navegación */
 .app-container {
     background-color: #f0f0f0;
     display: flex;
@@ -9,11 +9,9 @@
     justify-content: flex-start;
     height: 56px;
     font-family: 'IBM Plex Sans', sans-serif;
+}
 
-  }
-
-  /*Barra de navegación*/
-  .navbar {
+.navbar {
     background-color: #ffffff;
     width: 100%;
     padding: 10px;
@@ -29,57 +27,58 @@
     z-index: 100;
     border-width: 0 0 1px 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
+}
 
-  .left-content {
+.left-content {
     display: flex;
     align-items: center;
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 700;
-  }
+}
 
-  .left-content i {
+.left-content i {
     font-size: 20px;
     margin-right: 10px;
-  }
+}
 
-  .left-content img {
+.left-content img {
     width: 45px;
     height: auto;
     margin-right: 12px;
     margin-left: 10px;
-  }
-  .TIC{
+}
+
+.TIC {
     color: #79ed83;
 }
 
-/*Contenedor para la recuperación de contraseña*/
-section{
+/* Contenedor para la recuperación de contraseña */
+section {
     font-family: 'IBM Plex Sans', sans-serif;
-    background-color:#f3f3f3 ;
+    background-color: #f3f3f3;
     margin: 0;
     padding: 0;
     display: grid;
     place-items: center;
-    width: 110%;
+    width: 100%;
 }
 
-button{
+button {
     font-family: 'IBM Plex Sans', sans-serif;
     width: 75%;
     height: 40px;
     border-radius: 5px;
-    background:#79ed83;
+    background: #79ed83;
     border: none;
     outline: none;
     cursor: pointer;
     font-size: 1em;
     font-weight: 600;
     text-decoration: #79ed83;
-    color:black;
+    color: black;
 }
 
-.inputbox{
+.inputbox {
     position: relative;
     margin: 30px 0;
     width: 75%;
@@ -87,23 +86,23 @@ button{
     margin-left: 12.5%;
 }
 
-.inputbox label{
+.inputbox label {
     position: absolute;
     top: 50%;
     left: 5px;
     transform: translateY(-50%);
-    color:black;
+    color: black;
     font-size: 1em;
     pointer-events: none;
     transition: .5s;
 }
 
 input:focus ~ label,
-input:valid ~ label{
+input:valid ~ label {
     top: -5px;
 }
 
-.inputbox input{
+.inputbox input {
     width: 100%;
     height: 50px;
     background: transparent;
@@ -111,49 +110,49 @@ input:valid ~ label{
     outline: none;
     font-size: 1em;
     padding: 0 35px 0 5px;
-    color:solid#79ed83;
+    color: solid #79ed83;
 }
-.inputbox ion-icon{
+
+.inputbox ion-icon {
     position: absolute;
     right: 8px;
-    color:solid#0d4b68;
+    color: solid #0d4b68;
     font-size: 1.2em;
     top: 20px;
 }
 
-h1{
+h1 {
     font-size: 1.5em;
     color: black;
 }
 
-h2{
+h2 {
     text-align: center;
     width: 60%;
     margin-left: 20%;
     font-size: 0.8em;
 }
 
-h3{
+h3 {
     font-size: 0.9em;
     color: black;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-.center-side{
+.center-side {
     background: #f3f3f3;
     height: 100vh;
     align-items: center;
     text-align: center;
     justify-content: center;
     margin-top: 10%;
-
 }
 
-.form-box{
-    width: 455px;
+.form-box {
+    width: 100%;
     height: 470px;
     background: white;
     justify-content: center;
@@ -166,7 +165,7 @@ a{
 }
 
 .form-box2 {
-    width: 455px;
+    width: 100%;
     height: 43px;
     background: white;
     justify-content: center;
@@ -196,8 +195,79 @@ a{
     margin: 0 30px;
 }
 
-.img-pwd{
+.img-pwd {
     margin-top: 2.5%;
     width: 70px;
     height: 70px;
+}
+
+/* Modificaciones para dispositivos móviles */
+@media screen and (max-width: 991px) {
+    .app-container {
+        height: auto;
+    }
+
+    .navbar {
+        height: auto;
+        font-size: 18px;
+        padding: 8px;
+    }
+
+    .left-content i {
+        font-size: 16px;
+    }
+
+    .left-content img {
+        width: 35px;
+        margin-right: 8px;
+        margin-left: 8px;
+    }
+
+    section {
+        width: 100%;
+    }
+
+    button {
+        width: 90%;
+        font-size: 0.9em;
+    }
+
+    .inputbox {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    h1 {
+        font-size: 1.2em;
+    }
+
+    h2 {
+        width: 80%;
+        margin-left: 10%;
+        font-size: 0.7em;
+    }
+
+    .center-side {
+        margin-top: 5%;
+    }
+
+    .form-box,
+    .form-box2 {
+        width: 90%;
+        height: auto;
+        margin-top: 10%;
+    }
+
+    .line-container {
+        margin-top: 15%;
+        margin-bottom: 10%;
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .img-pwd {
+        margin-top: 5%;
+        width: 50px;
+        height: 50px;
+    }
 }
