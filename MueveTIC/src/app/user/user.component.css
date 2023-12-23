@@ -580,7 +580,7 @@
 }
 
 .input-fecha {
-  width: 90px; /* O el ancho deseado */
+  width: 90px; 
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -588,7 +588,7 @@
   background-color: #f9f9f9;
   color: #333;
   font-size: 16px;
-  margin-right: 5px; /* Espaciado a la derecha del campo (ajusta según sea necesario) */
+  margin-right: 5px; 
 }
 
 
@@ -596,7 +596,7 @@
 
 /* Estilo para el botón "Save" (verde) */
 .button-save {
-  background-color: transparent; /* Fondo transparente */
+  background-color: transparent; 
   border: none;
   padding: 0;
   margin: 5px;
@@ -608,9 +608,8 @@
   height: 100%;
   border-radius: 5px;
 }
-/* Estilo para el botón "Cancel" (rojo) */
 .button-cancelar {
-  background-color: transparent; /* Fondo transparente */
+  background-color: transparent; 
   border: none;
   padding: 0;
   margin: 5px;
@@ -625,7 +624,7 @@
 }
 
 .button-saveValoracion{
-  background-color: transparent; /* Fondo transparente */
+  background-color: transparent;
   border: none;
   padding: 0;
   margin-right:470px;
@@ -657,11 +656,11 @@
 
 .form-container {
   display: flex;
-  margin-top: 10px; /* Margen de 30px desde la barra de navegación */
+  margin-top: 10px; 
   margin-right: 50px;
   margin-left: 50px;
-  background-color: #ffffff; /* Color de fondo del formulario */
-  padding: 30px; /* Espacio interno del formulario */
+  background-color: #ffffff; 
+  padding: 30px; 
   font-family: 'IBM Plex Sans', sans-serif;
   width: 1000px;
   height: 330px;
@@ -695,11 +694,11 @@
 
 .form-container-Perfil {
   display: flex;
-  margin-top: 10px; /* Margen de 30px desde la barra de navegación */
+  margin-top: 10px; 
   margin-right: 50px;
   margin-left: 50px;
-  background-color: #ffffff; /* Color de fondo del formulario */
-  padding: 30px; /* Espacio interno del formulario */
+  background-color: #ffffff; 
+  padding: 30px; 
   font-family: 'IBM Plex Sans', sans-serif;
   width: 1000px;
   height: 420px;
@@ -714,17 +713,13 @@
   margin-top: 20px;
   margin-left: 15px;
   width:500px;
-  padding-right: 10px; /* Espaciado a la derecha de la parte izquierda */
+  padding-right: 10px;
 }
 .form-left-Perfil {
-  flex: 1; /* Ocupa el espacio disponible */
-  padding-right: 50px; /* Espaciado a la derecha de la parte izquierda */
-
-
+  flex: 1; 
+  padding-right: 50px; 
 }
 
-
-/* Estilo para la parte derecha del formulario */
 .form-right-Valoracion {
 
   margin-top:-80px;
@@ -732,9 +727,8 @@
   margin-left:700px;
 }
 
-
 .form-right-Perfil img {
-  max-width: 100%; /* Ajusta el tamaño máximo de la imagen para adaptarse al contenedor */
+  max-width: 100%; 
   width: 250px;
   height: auto;
   margin-top: 20px;
@@ -742,62 +736,55 @@
 }
 
 .form-separator-Perfil {
-  width: 5px; /* Ancho de la barra de separación */
-  background-color: #79ed83; /* Color verde para la barra de separación */
-  margin: 0 200px; /* Espaciado a izquierda y derecha de la barra de separación */
-  border-radius: 10px; /* Agrega bordes redondeados de 10px */
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2); /* Agrega una sombra suave */
+  width: 5px; 
+  background-color: #79ed83; 
+  margin: 0 200px; 
+  border-radius: 10px; 
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2); 
   height: 300px;
   margin-left: -2px;
 
 }
 .form-center-Perfil{
-  flex: 1; /* Ocupa el espacio disponible */
-  padding-left: 10px; /* Espaciado a la izquierda de la parte derecha */
+  flex: 1; 
+  padding-left: 10px;
   display: flex;
   flex-direction: column;
   margin-left:-180px;
   margin-right: 20px;
 }
 
-/* Estilo para la parte izquierda del formulario */
+
 .form-left {
-  flex: 1; /* Ocupa el espacio disponible */
-  padding-right: 20px; /* Espaciado a la derecha de la parte izquierda */
+  flex: 1;
+  padding-right: 20px; 
   margin-right: -100px;
 }
 
-/* Estilo para la parte derecha del formulario */
 .form-center {
-  flex: 1; /* Ocupa el espacio disponible */
-  padding-left: 10px; /* Espaciado a la izquierda de la parte derecha */
+  flex: 1; 
+  padding-left: 10px;
   display: flex;
   flex-direction: column;
   margin-left: -90px;
   margin-right: 20px;
 }
 
-/* Estilo para la barra de separación */
+
 .form-separator {
-  width: 5px; /* Ancho de la barra de separación */
-  background-color: #79ed83; /* Color verde para la barra de separación */
-  margin: 0 200px; /* Espaciado a izquierda y derecha de la barra de separación */
-  border-radius: 10px; /* Agrega bordes redondeados de 10px */
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2); /* Agrega una sombra suave */
+  width: 5px;
+  color: #79ed83; 
+  margin: 0 200px;
+  border-radius: 10px; 
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2); 
   height: 270px;
 }
 
-
-
-/* Estilo para el contenedor de los botones */
 .form-button {
   position: relative;
-  text-align: right; /* Alinea los botones a la derecha */
+  text-align: right; 
 }
 
-
-
-/* Estilo adicional para el contenedor de los botones para la posición absoluta */
 .form-button.absolute {
   display: flex;
   margin-top: 20%;
@@ -807,9 +794,9 @@
 
 .form-button-saveValoracion{
   position: absolute;
-  bottom: 50%; /* Centra verticalmente en la parte inferior */
-  left: 50%; /* Centra horizontalmente */
-  transform: translate(-50%, 50%); /* Ajusta la posición para centrar correctamente */
+  bottom: 50%; 
+  left: 50%; 
+  transform: translate(-50%, 50%); 
 }
 
 
@@ -861,7 +848,6 @@
   .container-home {
       max-width: 100%;
       margin-bottom: 12%;
-      /* display: flex; */
   }
   .conjunto{
     max-width: 100%;
@@ -924,7 +910,7 @@
   }
   
   .form-right-Perfil img {
-    display: none; /* Oculta la imagen en pantallas más pequeñas */
+    display: none; 
   }
   .form-container-Perfil{
     width: 85%;
@@ -941,10 +927,10 @@
   }
   .button-saveValoracion {
     position: absolute;
-    bottom: 50%; /* Centra verticalmente en la parte inferior */
-    left: 50%; /* Centra horizontalmente */
-    transform: translate(-50%, 50%); /* Ajusta la posición para centrar correctamente */
-    background-color: transparent; /* Fondo transparente */
+    bottom: 50%; 
+    left: 50%; 
+    transform: translate(-50%, 50%); 
+    background-color: transparent; 
     border: none;
     padding: 0;
     cursor: pointer;
@@ -960,15 +946,15 @@
   
   .button-eliminar {
     position: absolute;
-    bottom: 50%; /* Centra verticalmente en la parte inferior */
-    left: 50%; /* Centra horizontalmente */
-    transform: translate(-50%, 50%); /* Ajusta la posición para centrar correctamente */
-    background-color: transparent; /* Fondo transparente */
+    bottom: 50%; 
+    left: 50%; 
+    transform: translate(-50%, 50%); 
+    background-color: transparent; 
     border: none;
     padding: 0;
     cursor: pointer;
     width: 170px;
-    margin-right: 250px; /* Ajusta según sea necesario */
+    margin-right: 250px; 
   }
   
   .button-eliminar img {
@@ -990,7 +976,7 @@
     margin-left: 4%
   }
 
-/* Estilo para la línea horizontal */
+
 .horizontal-line-valoracion {
   display: flex;
   margin-right: 0;
@@ -1001,30 +987,30 @@
 }
 
 .short-divider-valoracion {
-  flex: 0 0 5%; /* No ocupa espacio adicional y tiene un ancho del 5% */
-  border-top: 4px solid #7d94f0; /* Línea horizontal de color verde */
+  flex: 0 0 5%; 
+  border-top: 4px solid #7d94f0;
 }
 
-/* Estilo para el texto "Consultar" */
+
 .line-text-valoracion {
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 700;
-  padding: 1%; /* Ajuste de espacio en todas las direcciones */
-  text-align: center; /* Alinea el texto al centro */
+  padding: 1%; 
+  text-align: center; 
 }
 
-/* Estilo para la barra derecha de 30% */
+
 .long-divider-valoracion {
-  flex: 0 0 21%; /* No ocupa espacio adicional y tiene un ancho del 21% */
-  border-top: 4px solid #7d94f0; /* Línea horizontal de color verde */
+  flex: 0 0 21%; 
+  border-top: 4px solid #7d94f0;
 }
 
 .form-container-Valoracion {
   margin-top: 2%;
   background-color: #ffffff;
   font-family: 'IBM Plex Sans', sans-serif;
-  width: 60%; /* Ajusta el ancho según tus necesidades */
-  height: auto; /* Ajusta la altura según tus necesidades */
+  width: 60%; 
+  height: auto; 
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -1032,27 +1018,33 @@
 
 .form-left-Valoracion {
   margin-top: 2%;
-  width: 40%; /* Ajusta el ancho según tus necesidades */
-  padding-right: 1%; /* Espaciado a la derecha de la parte izquierda */
+  width: 40%; 
+  margin-bottom: 5%;
+  padding-right: 1%; 
 }
 
 .form-right-Valoracion {
-  margin-top: -8%; /* Ajusta el margen superior según tus necesidades */
+  margin-top: -10%; 
   flex-direction: column;
-  margin-left: 42%; /* Ajusta el margen izquierdo según tus necesidades */
+  margin-left: 42%;
 }
 
 .form-button.absolute {
   position: absolute;
 }
+.form-right-Valoracion{
+  margin-top: -8%;
+  flex-direction: column;
+  margin-left: 7%;
+}
 
 .button-saveValoracion {
-  background-color: transparent; /* Fondo transparente */
+  background-color: transparent; 
   border: none;
   padding: 0;
   cursor: pointer;
-  width: 20%; /* Ajusta el ancho según tus necesidades */
-  margin-right: 10%; /* Ajusta el margen derecho según tus necesidades */
+  width: 20%; 
+  margin-right: 10%; 
 }
 
 .button-saveValoracion img {

@@ -39,7 +39,7 @@
     </div>
     <div class="form-container-Valoracion"  *ngIf="mostrarFormValoracion" [ngClass]="{'estilo-true': mostrarFormValoracion, 'estilo-false': !mostrarFormValoracion}">
       <div class="form-left-Valoracion">
-        <div>
+        <div class="coment">
           <label for="comentario">Comentario</label>
           <input class="input-formularios" type="text" id="comentario" name="comentario" [(ngModel)]="comentario"
             [matTooltip]="tooltipText" (input)="updateTooltip()">
@@ -55,7 +55,7 @@
         </ngb-rating>
       </div>
   
-      <div class="form-button absolute">
+      <div class="form-button absolute2">
         <button class="button-saveValoracion" (click)="confirmReserva()"> <img src="assets/guardar_valoracion_boton.png"
             alt="Guardar Valoracion ">
         </button>

@@ -173,7 +173,7 @@ button{
     margin: 30px 0;
     width: 82.5%;
     margin-left: 5%;
-    border-bottom: 2px solid #79ed83;
+    border-bottom: 2px solid #000000;
 }
 .inputbox label{
     position: absolute;
@@ -403,7 +403,7 @@ p{
       position: relative;
       margin: 15px 0; /* Ajustado para móvil */
       width: 100%; /* Cambiado al 100% para ocupar toda la pantalla en móvil */
-      border-bottom: 2px solid #79ed83;
+      border-bottom: 2px solid #050505;
   }
   
   .inputbox label {
@@ -430,7 +430,7 @@ p{
       outline: none;
       font-size: 1em;
       padding: 0 10px;
-      color: #79ed83;
+      color: #050505;
   }
   
   .inputbox ion-icon {
